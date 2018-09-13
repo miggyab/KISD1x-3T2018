@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="id" content="BDE">
+    <title>BDE</title>
+    <!--CSS-->
+    <link href="Assets/normalize.css" rel="stylesheet">
+    <link href="Assets/CTAT.css" rel="stylesheet">
+    <link href="Assets/BDE.css" rel="stylesheet">
+    <!--JS-->
+    <script type="text/javascript" src="Assets/jquery.min.js"></script>
+    <script type="text/javascript" src="Assets/ctat.min.js"></script>
+    <script type="text/javascript" src="Assets/ctatloader.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+	<div class="leftPanel left">
+		<div class="CTATTextField CTATComponent" id="toolPreference" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">
+          	Choose RapidMiner or Python based on your tool preference.
+        	</div>
+		<div id="toolChoice" class="CTATComboBox">
+  			<option>--------</option>
+  			<option>RapidMiner</option>
+  			<option>Python</option>
+		</div>
+		<div class="CTATTextField CTATComponent" id="blackSpace" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">
+          	&nbsp;
+        	</div>
+        	<div class="CTATTextField CTATComponent" id="left" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">
+          	Note: after answering each question, please <b>press Enter</b> and scroll down to see the next one.
+        	</div>
+	</div>
+        <div class="CTATHintWindow CTATComponent" id="hintWindow" data-ctat-component="CTATHintWindow" data-ctat-enabled="true"></div>
+        <div class="right">
+          <div class="CTATButtons">
+            <div id="hint" class="CTATHintButton CTATComponent" data-ctat-component="CTATHintButton" data-ctat-enabled="true"></div>
+            <div id="fakeDone" class="hidden CTATButton CTAT-fakeDone-button CTATComponent" tabindex="-1" data-ctat-component="CTATButton" data-ctat-enabled="true">
+	      <div class="CTAT-done-button--content">
+		<div class="CTAT-done-button--icon">✔</div>
+		<div class="CTAT-done-button--text">Done</div>
+	      </div>
+	    </div>
+            <div class="CTATTextField CTATComponent" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">
+              To return to the course, click the <strong style="font-size:larger">&times;</strong>.
+            </div>
+          </div>
+          <div class="CTATTextField CTATComponent" id="right" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">
+            Please click the Hint button to view hints.
+          </div>
+        </div>
+      </div>
+      <div class="questions">
+        <div class="CTATTextField CTATComponent" id="q1prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q1prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q1TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q1radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q1RB1-4" tabindex="1" name="q1radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q1RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q1RB2-4" tabindex="1" name="q1radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q1RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q1RB3-4" tabindex="1" name="q1radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q1RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q1RB4-4" tabindex="1" name="q1radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q1RB4-4)%</div>
+        </div>
+        <div class="CTATTextField CTATComponent hidden" id="q2prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q2prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q2TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q2radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q2RB1-4" tabindex="1" name="q2radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q2RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q2RB2-4" tabindex="1" name="q2radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q2RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q2RB3-4" tabindex="1" name="q2radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q2RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q2RB4-4" tabindex="1" name="q2radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q2RB4-4)%</div>
+        </div>
+        <div class="CTATTextField CTATComponent hidden" id="q3prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q3prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q3TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q3radioButtonGroup-2">
+          <div class="CTATRadioButton CTATComponent hidden" id="q3RB1-2" tabindex="1" name="q3radioButtonGroup-2" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q3RB1-2)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q3RB2-2" tabindex="1" name="q3radioButtonGroup-2" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q3RB2-2)%</div>
+        </div>
+        <div class="CTATRadioButtonGroup" id="q3radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q3RB1-4" tabindex="1" name="q3radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q3RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q3RB2-4" tabindex="1" name="q3radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q3RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q3RB3-4" tabindex="1" name="q3radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q3RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q3RB4-4" tabindex="1" name="q3radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q3RB4-4)%</div>
+        </div>
+        <div class="CTATCheckBoxGroup" id="q3CheckBoxGroup">
+          <div class="CTATCheckBox CTATComponent hidden" id="q3CheckBoxA" tabindex="1" name="q3CheckBoxGroup" data-ctat-component="CTATCheckBox" data-ctat-enabled="true" data-ctat-show-feedback="false" data-ctat-tutor="false">%(q3CheckBoxA)%</div>
+          <div class="CTATCheckBox CTATComponent hidden" id="q3CheckBoxB" tabindex="1" name="q3CheckBoxGroup" data-ctat-component="CTATCheckBox" data-ctat-enabled="true" data-ctat-show-feedback="false" data-ctat-tutor="false">%(q3CheckBoxB)%</div>
+          <div class="CTATCheckBox CTATComponent hidden" id="q3CheckBoxC" tabindex="1" name="q3CheckBoxGroup" data-ctat-component="CTATCheckBox" data-ctat-enabled="true" data-ctat-show-feedback="false" data-ctat-tutor="false">%(q3CheckBoxC)%</div>
+          <div class="CTATCheckBox CTATComponent hidden" id="q3CheckBoxD" tabindex="1" name="q3CheckBoxGroup" data-ctat-component="CTATCheckBox" data-ctat-enabled="true" data-ctat-show-feedback="false" data-ctat-tutor="false">%(q3CheckBoxD)%</div>
+          <div class="CTATCheckBox CTATComponent hidden" id="q3CheckBoxE" tabindex="1" name="q3CheckBoxGroup" data-ctat-component="CTATCheckBox" data-ctat-enabled="true" data-ctat-show-feedback="false" data-ctat-tutor="false">%(q3CheckBoxE)%</div>
+          <div class="CTATCheckBox CTATComponent hidden" id="q3CheckBoxF" tabindex="1" name="q3CheckBoxGroup" data-ctat-component="CTATCheckBox" data-ctat-enabled="true" data-ctat-show-feedback="false" data-ctat-tutor="false">%(q3CheckBoxF)%</div>
+          <div class="CTATCheckBox CTATComponent hidden" id="q3CheckBoxG" tabindex="1" name="q3CheckBoxGroup" data-ctat-component="CTATCheckBox" data-ctat-enabled="true" data-ctat-show-feedback="false" data-ctat-tutor="false">%(q3CheckBoxG)%</div>
+          <div class="CTATSubmitButton CTATComponent hidden" id="q3CheckboxSubmit" tabindex="1" data-ctat-component="CTATSubmitButton" data-ctat-enabled="true" data-ctat-target="q3CheckBoxGroup">Submit</div>
+        </div>
+        <div class="CTATTextField CTATComponent hidden" id="q4prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q4prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q4TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q4radioButtonGroup-2">
+          <div class="CTATRadioButton CTATComponent hidden" id="q4RB1-2" tabindex="1" name="q4radioButtonGroup-2" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q4RB1-2)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q4RB2-2" tabindex="1" name="q4radioButtonGroup-2" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q4RB2-2)%</div>
+        </div>
+        <div class="CTATRadioButtonGroup" id="q4radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q4RB1-4" tabindex="1" name="q4radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q4RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q4RB2-4" tabindex="1" name="q4radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q4RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q4RB3-4" tabindex="1" name="q4radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q4RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q4RB4-4" tabindex="1" name="q4radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q4RB4-4)%</div>
+        </div>
+        <div class="CTATTextField CTATComponent hidden" id="q5prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q5prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q5TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q5radioButtonGroup-2">
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB1-2" tabindex="1" name="q5radioButtonGroup-2" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB1-2)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB2-2" tabindex="1" name="q5radioButtonGroup-2" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB2-2)%</div>
+        </div>
+        <div class="CTATRadioButtonGroup" id="q5radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB1-4" tabindex="1" name="q5radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB2-4" tabindex="1" name="q5radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB3-4" tabindex="1" name="q5radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB4-4" tabindex="1" name="q5radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB4-4)%</div>
+        </div>
+        <div class="CTATRadioButtonGroup" id="q5radioButtonGroup-8">
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB1-8" tabindex="1" name="q5radioButtonGroup-8" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB1-8)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB2-8" tabindex="1" name="q5radioButtonGroup-8" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB2-8)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB3-8" tabindex="1" name="q5radioButtonGroup-8" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB3-8)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB4-8" tabindex="1" name="q5radioButtonGroup-8" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB4-8)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB5-8" tabindex="1" name="q5radioButtonGroup-8" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB5-8)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB6-8" tabindex="1" name="q5radioButtonGroup-8" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB6-8)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB7-8" tabindex="1" name="q5radioButtonGroup-8" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB7-8)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q5RB8-8" tabindex="1" name="q5radioButtonGroup-8" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q5RB8-8)%</div>
+        </div>
+        <div class="CTATTextField CTATComponent hidden" id="q6prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q6prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q6TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q6radioButtonGroup-2">
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB1-2" tabindex="1" name="q6radioButtonGroup-2" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB1-2)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB2-2" tabindex="1" name="q6radioButtonGroup-2" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB2-2)%</div>
+        </div>
+        <div class="CTATRadioButtonGroup" id="q6radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB1-4" tabindex="1" name="q6radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB2-4" tabindex="1" name="q6radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB3-4" tabindex="1" name="q6radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB4-4" tabindex="1" name="q6radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB4-4)%</div>
+        </div>
+        <div class="CTATRadioButtonGroup" id="q6radioButtonGroup-12">
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB1-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB1-12)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB2-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB2-12)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB3-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB3-12)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB4-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB4-12)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB5-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB5-12)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB6-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB6-12)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB7-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB7-12)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB8-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB8-12)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB9-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB9-12)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB10-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB10-12)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB11-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB11-12)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q6RB12-12" tabindex="1" name="q6radioButtonGroup-12" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q6RB12-12)%</div>
+        </div>
+        <div class="CTATTextField CTATComponent hidden" id="q7prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q7prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q7TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q7radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q7RB1-4" tabindex="1" name="q7radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q7RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q7RB2-4" tabindex="1" name="q7radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q7RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q7RB3-4" tabindex="1" name="q7radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q7RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q7RB4-4" tabindex="1" name="q7radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q7RB4-4)%</div>
+        </div>
+        <div class="CTATTextField CTATComponent hidden" id="q8prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q8prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q8TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q8radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q8RB1-4" tabindex="1" name="q8radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q8RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q8RB2-4" tabindex="1" name="q8radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q8RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q8RB3-4" tabindex="1" name="q8radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q8RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q8RB4-4" tabindex="1" name="q8radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q8RB4-4)%</div>
+        </div>
+        <div class="CTATTextField CTATComponent hidden" id="q9prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q9prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q9TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q9radioButtonGroup-3">
+          <div class="CTATRadioButton CTATComponent hidden" id="q9RB1-3" tabindex="1" name="q9radioButtonGroup-3" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q9RB1-3)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q9RB2-3" tabindex="1" name="q9radioButtonGroup-3" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q9RB2-3)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q9RB3-3" tabindex="1" name="q9radioButtonGroup-3" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q9RB3-3)%</div>
+        </div>
+        <div class="CTATRadioButtonGroup" id="q9radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q9RB1-4" tabindex="1" name="q9radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q9RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q9RB2-4" tabindex="1" name="q9radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q9RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q9RB3-4" tabindex="1" name="q9radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q9RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q9RB4-4" tabindex="1" name="q9radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q9RB4-4)%</div>
+        </div>
+        <div class="CTATTextField CTATComponent hidden" id="q10prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q10prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q10TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q10radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q10RB1-4" tabindex="1" name="q10radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q10RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q10RB2-4" tabindex="1" name="q10radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q10RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q10RB3-4" tabindex="1" name="q10radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q10RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q10RB4-4" tabindex="1" name="q10radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q10RB4-4)%</div>
+        </div>
+        <div class="CTATTextField CTATComponent hidden" id="q11prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q11prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q11TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q11radioButtonGroup-2">
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB1-2" tabindex="1" name="q11radioButtonGroup-2" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB1-2)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB2-2" tabindex="1" name="q11radioButtonGroup-2" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB2-2)%</div>
+        </div>
+        <div class="CTATRadioButtonGroup" id="q11radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB1-4" tabindex="1" name="q11radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB2-4" tabindex="1" name="q11radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB3-4" tabindex="1" name="q11radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB4-4" tabindex="1" name="q11radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB4-4)%</div>
+        </div>
+        <div class="CTATRadioButtonGroup" id="q11radioButtonGroup-7">
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB1-7" tabindex="1" name="q11radioButtonGroup-7" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB1-7)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB2-7" tabindex="1" name="q11radioButtonGroup-7" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB2-7)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB3-7" tabindex="1" name="q11radioButtonGroup-7" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB3-7)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB4-7" tabindex="1" name="q11radioButtonGroup-7" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB4-7)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB5-7" tabindex="1" name="q11radioButtonGroup-7" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB5-7)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB6-7" tabindex="1" name="q11radioButtonGroup-7" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB6-7)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q11RB7-7" tabindex="1" name="q11radioButtonGroup-7" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q11RB7-7)%</div>
+        </div>
+        <div class="CTATTextField CTATComponent hidden" id="q12prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q12prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q12TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATTextField CTATComponent hidden" id="q13prompt" data-ctat-component="CTATTextBasedComponent" data-ctat-enabled="false" contenteditable="false">%(q13prompt)%</div>
+        <div class="CTATTextInput CTATComponent hidden" id="q13TextField" tabindex="1" data-ctat-component="CTATTextInput" data-ctat-enabled="true"></div>
+        <div class="CTATRadioButtonGroup" id="q3radioButtonGroup-4">
+          <div class="CTATRadioButton CTATComponent hidden" id="q13RB1-4" tabindex="1" name="q13radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q13RB1-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q13RB2-4" tabindex="1" name="q13radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q13RB2-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q13RB3-4" tabindex="1" name="q13radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q13RB3-4)%</div>
+          <div class="CTATRadioButton CTATComponent hidden" id="q13RB4-4" tabindex="1" name="q13radioButtonGroup-4" data-ctat-component="CTATRadioButton" data-ctat-enabled="true">%(q13RB4-4)%</div>
+        </div>
+        <div id="fake" class="CTATButton CTATComponent" tabindex="100" data-ctat-enabled="true" data-ctat-tutor="false"></div>
+      </div>
+    </div>
+  </body>
+</html>

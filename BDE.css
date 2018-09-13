@@ -1,0 +1,165 @@
+html, body {
+  min-width: 500px;
+  min-height: 400px;
+  height: 100%;
+  background-color: rgb(154, 154, 154);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  background-color: white;
+}
+
+.header {
+  min-height: 140px;
+  max-height: 240px;
+  flex: 1 0 0;
+  display: flex;
+  align-items: stretch;
+  padding: 5px;
+}
+
+.header > div {
+  margin: 5px;
+}
+
+.header .leftPanel {
+  flex-direction: column;
+}
+
+.header .left {
+  flex: 1 0 0;
+  align-self: flex-end;
+}
+
+.header .right {
+  flex: 1 0 0;
+}
+
+.CTATHintWindow {
+  flex: 2 0 0;
+  height: auto;
+}
+
+.CTATButtons {
+  flex-flow: row;
+  justify-content: flex-start;
+  height: auto;
+  margin-right: 15px;
+}
+
+.CTATButtons > div {
+  margin-bottom: 10px;
+}
+
+.CTATHintButton, .CTAT-fakeDone-button {
+  margin-right: 10px;
+}
+
+.CTAT-fakeDone-button {
+  width: 68px;
+  height: 68px;
+  font: 15px Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.CTAT-button {
+  padding: 0;
+  font: inherit;
+  border-radius: 5px;
+  background-color: #669900;
+  border: 1px solid green;
+  cursor: pointer;
+  width: inherit;
+  height: inherit;
+}
+
+.CTAT-button:focus {
+  outline: none;
+}
+
+.CTAT-button--hover {
+  background-color: #5C8A00;
+}
+
+.CTAT-button--clicked {
+  background-color: #85AD33;
+}
+
+button.CTAT-button:disabled {
+  background-color: #EDEDED;
+  border: 1px solid darkgrey;
+  color: #9A9A9A;
+  cursor: default;
+}
+
+.questions {
+  flex: 2 0 0;
+  margin: 0 10px 10px;
+  padding: 10px;
+  background-color: rgb(214, 214, 214);
+  overflow-y: auto;
+}
+
+.questions > .CTATTextField {
+  padding: 5px;
+  background-color: rgb(240, 240, 240);
+}
+
+.questions > .CTATTextInput {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 140px;
+  height: 20px;
+  background-color: white;
+}
+
+.questions > .CTATTextInput > input[type="text"] {
+  border-width: 1px;
+}
+
+.questions > .CTATRadioButtonGroup, .questions > .CTATCheckBoxGroup {
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+.questions > .CTATRadioButtonGroup > .CTATRadioButton, .questions > .CTATCheckBoxGroup > .CTATCheckBox {
+  display: flex;
+}
+
+.questions > .CTATRadioButtonGroup > .CTATRadioButton > input[type="radio"], .questions > .CTATCheckBoxGroup > .CTATCheckBox > input[type="checkbox"] {
+  margin: 5px 10px 5px 5px;
+  flex: none;
+}
+
+.questions > .CTATRadioButtonGroup > .CTATRadioButton > label, .questions > .CTATCheckBoxGroup > .CTATCheckBox > label {
+  padding-left: 20px;
+  text-indent: -20px;
+}
+
+.questions > .CTATCheckBoxGroup > .CTATSubmitButton > button {
+  margin: 5px 5px 5px 30px;
+  width: 120px;
+  height: 25px;
+  line-height: 25px;
+}
+
+#fake {
+  width: 0;
+  height: 0;
+}
+
+#fake .CTAT-button {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+
+}
